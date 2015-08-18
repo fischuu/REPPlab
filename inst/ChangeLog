@@ -1,0 +1,76 @@
+LOG of the CHANGES in the package REPPlab
+
+Versiom 0.9.2
+-----------------------------------
+* Introduced Roxygen2 for the package documentation
+
+Versiom 0.9.1
+-----------------------------------
+* New maintainer email address
+
+Version 0.9
+-----------------------------------
+* Pre-release version
+* Reference to the Java sources added
+
+Version 0.4.4
+-----------------------------------
+* major revision of the manual
+
+Version 0.4.3
+-----------------------------------
+* made sure that all data standardization in epplab is done in R
+* adding description of convergence criteria in help file of epplab
+
+Version 0.4.2
+-----------------------------------
+* added data set ReliabilityData
+
+Version 0.4.1:
+-----------------------------------
+* REPPlab changes:
+* Fixed some display issues in the 'summary.epplab' and 'print.epplab' functions.
+* Corrected some typos in the manual.
+* PSO and Tribe maxiter default is now 200.
+* Fixed an error in 'summary.epplabOutlier' and 'plot.epplabOutlier' for the case that no outliers are observed.
+* Assign dummy rownames to data object in case no rownames are given.
+
+Version 0.4:
+-----------------------------------
+* EPPlab changes: 
+* Added a convergence criteria.
+
+* REPPlab changes:
+* Added the convergence criteria as options 'step_iter' and 'eps' in the EPPlab call. 
+* Added the convergence value to the 'print.epplab' and 'summary.epplab' output.
+
+Version 0.3:
+-----------------------------------
+* EPPlab changes: 
+* Added the library ssj.jar to the project
+
+* REPPlab changes:
+* The Friedman index is fully functional now.
+* Fixed a typo with the Tribe PP algorithm that caused the results to be the same for all different indices.
+
+Version 0.2:
+-----------------------------------
+* EPPlab changes: 
+* Created the class "PseudoRandomNumbers" (in package javalain.math) in which there are two static methods
+   - public static void createGenerator (long seed) - to create a random generator of numbers.
+   - public static void destroyGenerator (long seed) - to destroy a random generator of numbers.
+   - public static double random () - to generate a number between [0 1[
+
+* Replaced all items "Math.random()" in project with "PseudoRandomNumbers.random()"
+* Create a random number generator during the first function call
+* Destroy the RNG when leaving the java program
+* Friedman subfunction does not work, so they are commented out
+
+* REPPlab changes:
+* EPPlab is now included as one jar file, instead of three subfiles
+* A random number will be passed to EPPlab as a seed (so, EPPlab results are 'seedable' from within R)
+* The typo in the default settings for the option PPindex in the EPPlab function has been fixed
+
+Version 0.1:
+------------------------------------
+* First build and CRAN submission
