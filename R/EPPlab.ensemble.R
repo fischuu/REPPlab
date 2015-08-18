@@ -58,14 +58,14 @@ EPPlab.ensemble <- function(x, type, ...){
 }
 
   
-  resB2P.REPPres.disc <- apply(coef(REPPres.disc),2 , B2P)
-  lresB2P.REPPres.disc <- tapply(resB2P.REPPres.disc, gl(ncol(resB2P.REPPres.disc), nrow(resB2P.REPPres.disc)), matrix, nrow=ncol(sim.data), ncol=ncol(sim.data))
-  
-  resB2P.REPPres.ft <- apply(coef(REPPres.ft),2 , B2P)
-  lresB2P.REPPres.ft <- tapply(resB2P.REPPres.ft, gl(ncol(resB2P.REPPres.ft), nrow(resB2P.REPPres.ft)), matrix, nrow=ncol(sim.data), ncol=ncol(sim.data))
-  
-  resB2P.REPPres.kmax <- apply(coef(REPPres.kmax),2 , B2P)
-  lresB2P.REPPres.kmax <- tapply(resB2P.REPPres.kmax, gl(ncol(resB2P.REPPres.kmax), nrow(resB2P.REPPres.kmax)), matrix, nrow=ncol(sim.data), ncol=ncol(sim.data))
-  
-  resB2P.REPPres.kmin <- apply(coef(REPPres.kmin),2 , B2P)
-  lresB2P.REPPres.kmin <- tapply(resB2P.REPPres.kmin, gl(ncol(resB2P.REPPres.kmin), nrow(resB2P.REPPres.kmin)), matrix, nrow=ncol(sim.data), ncol=ncol(sim.data))
+#   resB2P.REPPres.disc <- apply(coef(REPPres.disc),2 , B2P)
+#   lresB2P.REPPres.disc <- tapply(resB2P.REPPres.disc, gl(ncol(resB2P.REPPres.disc), nrow(resB2P.REPPres.disc)), matrix, nrow=ncol(sim.data), ncol=ncol(sim.data))
+#   
+#   resB2P.REPPres.ft <- apply(coef(REPPres.ft),2 , B2P)
+#   lresB2P.REPPres.ft <- tapply(resB2P.REPPres.ft, gl(ncol(resB2P.REPPres.ft), nrow(resB2P.REPPres.ft)), matrix, nrow=ncol(sim.data), ncol=ncol(sim.data))
+#   
+#   resB2P.REPPres.kmax <- apply(coef(REPPres.kmax),2 , B2P)
+#   lresB2P.REPPres.kmax <- tapply(resB2P.REPPres.kmax, gl(ncol(resB2P.REPPres.kmax), nrow(resB2P.REPPres.kmax)), matrix, nrow=ncol(sim.data), ncol=ncol(sim.data))
+#   
+#   resB2P.REPPres.kmin <- apply(coef(REPPres.kmin),2 , B2P)
+#   lresB2P.REPPres.kmin <- tapply(resB2P.REPPres.kmin, gl(ncol(resB2P.REPPres.kmin), nrow(resB2P.REPPres.kmin)), matrix, nrow=ncol(sim.data), ncol=ncol(sim.data))
