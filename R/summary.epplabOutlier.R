@@ -34,15 +34,17 @@
 summary.epplabOutlier <- function(object, ...)
     {
     RowSUMS <- rowSums(object$outlier)
+    RowMEANS <- RowSUMS/NCOL(object$outlier)
     
     if (sum(RowSUMS) !=0){
         IDrowSUMS <- RowSUMS>0
         OutlierNames <- row.names(object$outlier)[IDrowSUMS]
         OutlierFreq <- RowSUMS[IDrowSUMS]
+        OutlierRelFreq <- RowMEANS[IDrowSUMS]
         OutlierN <- length(OutlierNames)
     
-        OutlierTable <- as.table(rbind(OutlierNames,OutlierFreq))
-        attr(OutlierTable,"dimnames")<-list(c("OutlierID:", "Frequency:"),rep("",OutlierN))
+        OutlierTable <- as.table(rbind(OutlierNames, OutlierFreq, OutlierRelFreq))
+        attr(OutlierTable,"dimnames")<-list(c("OutlierID:", "Frequency:", "Rel. Freq:"),rep("",OutlierN))
 
         cat("REPPlab Outlier Summary\n")
         cat("-----------------------\n")
