@@ -1,5 +1,5 @@
 # Helpfunction
-  B2P_fixed2 <- function(x){tcrossprod(x)/sum(x^2)  }
+  B2P_fixed <- function(x){tcrossprod(x)/sum(x^2)  }
 
 #' Function to Combine epplab Objects
 #' 
@@ -64,7 +64,7 @@ EPPlabAgg <- function(x, method, percentage=0.95){
         # project the data on the directions we keep
           coord <- x[[i]]$x %*% keepmave           
         # Write out the results
-          res <- list(P=O2P(umave), O=umave, k= ncol(keepmave))      
+          res <- list(P=O2P(umave), O=keepmave, k= ncol(keepmave))      
         } else {
           B2P.output <-  list()
           lresB2P <- list()

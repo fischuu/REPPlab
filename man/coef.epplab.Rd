@@ -7,7 +7,7 @@
 \alias{coef.epplab}
 \title{Extracts the Directions of an Epplab Object}
 \usage{
-\method{coef}{epplab}(object, which = 1:ncol(object$PPdir), ...)
+coef.epplab(object, which = 1:ncol(object$PPdir), ...)
 }
 \arguments{
 \item{object}{Object of class \code{epplab}.}

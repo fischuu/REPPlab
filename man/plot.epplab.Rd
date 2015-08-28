@@ -7,8 +7,8 @@
 \alias{plot.epplab}
 \title{Plot for an epplab Object}
 \usage{
-\method{plot}{epplab}(x, type = "kernel", angles = "radiants",
-  kernel = "biweight", which = 1:10, as.table = TRUE, ...)
+plot.epplab(x, type = "kernel", angles = "radiants", kernel = "biweight",
+  which = 1:10, as.table = TRUE, ...)
 }
 \arguments{
 \item{x}{Object of class \code{epplab}.}

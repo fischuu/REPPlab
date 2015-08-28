@@ -7,7 +7,7 @@
 \alias{fitted.epplab}
 \title{Calculates projections of the Data}
 \usage{
-\method{fitted}{epplab}(object, which = 1, ...)
+fitted.epplab(object, which = 1, ...)
 }
 \arguments{
 \item{object}{Object of class \code{epplab}.}
