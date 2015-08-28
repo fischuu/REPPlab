@@ -59,11 +59,12 @@ EPPlabAgg <- function(x, method, percentage=0.95){
           lmave<-eigmave$values
           umave<-eigmave$vectors
         # eliminate the directions that are associated with less than '1-percentage'% of the information
-          keepmave<-umave[,(cumsum(lmave)<percentage)] 
+          takeThese <- 1:min(sum((cumsum(lmave)<percentage))+1, length(lmave))
+          keepmave<-umave[,takeThese] 
         # project the data on the directions we keep
           coord <- x[[i]]$x %*% keepmave           
         # Write out the results
-          res <- list(values=lmave, vectors=umave, keepmave= keepmave, coord= coord)      
+          res <- list(P=O2P(umave), O=umave, k= ncol(keepmave))      
         } else {
           B2P.output <-  list()
           lresB2P <- list()
