@@ -20,6 +20,10 @@ once should be plotted or all. Default is \code{TRUE}.
 xlab Possible x axis label. Default is none.
 ylab Possible x axis label. Default is none.}
 
+\item{xlab}{Sets the x-axis label.}
+
+\item{ylab}{Sets the y-axis label.}
+
 \item{...}{Graphical parameters passed on to \code{\link{image}}.}
 }
 \description{

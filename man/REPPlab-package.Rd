@@ -15,7 +15,7 @@ high dimensional) data sets.
 }
 \details{
 \tabular{ll}{ Package: \tab REPPlab\cr Type: \tab Package\cr Version: \tab
-0.9.2\cr Date: \tab 2015-07-13\cr License: \tab GPL\cr LazyLoad: \tab yes\cr
+0.9.2\cr Date: \tab 2015-09-01\cr License: \tab GPL\cr LazyLoad: \tab yes\cr
 }
 }
 \author{

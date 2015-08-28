@@ -14,6 +14,8 @@
 #' once should be plotted or all. Default is \code{TRUE}.
 #' xlab Possible x axis label. Default is none.
 #' ylab Possible x axis label. Default is none.
+#' @param xlab Sets the x-axis label.
+#' @param ylab Sets the y-axis label.
 #' @param ... Graphical parameters passed on to \code{\link{image}}.
 #' @author Daniel Fischer and Klaus Nordhausen
 #' @seealso \code{\link{EPPlabOutlier}}, \code{\link{image}}

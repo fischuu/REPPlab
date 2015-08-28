@@ -1,5 +1,3 @@
-
-
 #' Reliability Data from a Manufacturer of Electronic Components
 #' 
 #' The data set contains 55 variables measured during the production process of
@@ -20,9 +18,6 @@
 NULL
 
 
-
-
-
 #' R Interface to the Java Program EPP-lab v1.0
 #' 
 #' An interface that gives access to the Java program EPP-lab which implements
@@ -33,7 +28,7 @@ NULL
 #' high dimensional) data sets.
 #' 
 #' \tabular{ll}{ Package: \tab REPPlab\cr Type: \tab Package\cr Version: \tab
-#' 0.9.2\cr Date: \tab 2015-07-13\cr License: \tab GPL\cr LazyLoad: \tab yes\cr
+#' 0.9.2\cr Date: \tab 2015-09-01\cr License: \tab GPL\cr LazyLoad: \tab yes\cr
 #' }
 #' 
 #' @name REPPlab-package
