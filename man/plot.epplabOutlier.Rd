@@ -6,7 +6,7 @@
 \alias{plot.epplabOutlier}
 \title{Plot for an epplabOutlier Object}
 \usage{
-plot.epplabOutlier(x, col = c("white", "black"), outlier = TRUE,
+\method{plot}{epplabOutlier}(x, col = c("white", "black"), outlier = TRUE,
   xlab = "", ylab = "", ...)
 }
 \arguments{

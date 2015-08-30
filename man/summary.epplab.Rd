@@ -7,7 +7,7 @@
 \alias{summary.epplab}
 \title{Summarize an epplab Object}
 \usage{
-summary.epplab(object, which = 1:10, ...)
+\method{summary}{epplab}(object, which = 1:10, ...)
 }
 \arguments{
 \item{object}{Object of class \code{epplab}.}

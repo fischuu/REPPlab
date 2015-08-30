@@ -59,7 +59,7 @@ EPPlabAgg <- function(x, method, percentage=0.95){
           lmave<-eigmave$values
           umave<-eigmave$vectors
         # eliminate the directions that are associated with less than '1-percentage'% of the information
-          takeThese <- 1:min(sum((cumsum(lmave)<percentage))+1, length(lmave))
+          takeThese <- 1:min(sum(((cumsum(lmave)/sum(lmave))<percentage))+1, length(lmave))
           keepmave<-umave[,takeThese] 
         # project the data on the directions we keep
           coord <- x[[i]]$x %*% keepmave           

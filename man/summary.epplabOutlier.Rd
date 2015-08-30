@@ -6,7 +6,7 @@
 \alias{summary.epplabOutlier}
 \title{Summarize an epplabOutlier Object}
 \usage{
-summary.epplabOutlier(object, ...)
+\method{summary}{epplabOutlier}(object, ...)
 }
 \arguments{
 \item{object}{Object of class \code{epplabOutlier}.}
