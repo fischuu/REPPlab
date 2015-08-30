@@ -64,7 +64,7 @@ EPPlabAgg <- function(x, method, percentage=0.95){
         # project the data on the directions we keep
           coord <- x[[i]]$x %*% keepmave           
         # Write out the results
-          res <- list(P=O2P(umave), O=keepmave, k= ncol(keepmave))      
+          res <- list(P=O2P(umave), O=keepmave, k= ncol(keepmave), eigen=lmave)      
         } else {
           B2P.output <-  list()
           lresB2P <- list()
