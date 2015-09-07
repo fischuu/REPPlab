@@ -34,7 +34,7 @@
 #' X[3,6] <- 8
 #' 
 #' @export EPPlabAgg
-EPPlabAgg <- function(x, method, percentage=0.95){
+EPPlabAgg <- function(x, method="cum", percentage=0.95){
   
       # Input checks
         method <- match.arg(method, c("inverse", "sq.inverse", "inverse", "cum"))
