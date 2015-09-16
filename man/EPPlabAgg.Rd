@@ -4,7 +4,7 @@
 \alias{EPPlabAgg}
 \title{Function to Combine epplab Objects}
 \usage{
-EPPlabAgg(x, method, percentage = 0.95)
+EPPlabAgg(x, method = "cumulative", percentage = 0.95)
 }
 \arguments{
 \item{x}{An object of class \code{epplab}.}
