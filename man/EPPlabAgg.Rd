@@ -31,13 +31,30 @@ The parameter \code{x} can either be a single object or a list of epplab objects
 Options for method are inverse, sqinverse and cum.
 }
 \examples{
-# creating data with 3 outliers
-n <-300
-p <- 10
-X <- matrix(rnorm(n*p),ncol=p)
-X[1,1] <- 9
-X[2,4] <- 7
-X[3,6] <- 8
+library(tourr)
+ data(olive)
+ olivePP.kurt.max <-
+   EPPlab(olive[,3:10],PPalg="PSO",PPindex="KurtosisMax",n.simu=10, maxiter=20)
+
+ olivePP.fried <-
+   EPPlab(olive[,3:10],PPalg="PSO",PPindex="Friedman",n.simu=10, maxiter=20)
+
+ olivePPs <- list(olivePP.kurt.max, olivePP.fried)
+
+ EPPlabAgg(olivePP.kurt.max)$k
+ EPPlabAgg(olivePPs, "cum", 0.99)$k
+
+ # IF there is here on k=2 or more, maybe one could add
+ # pairs(olivePP.kurt.max \%*\% EPPlabAgg(olivePPs, "cum", 0.99)$O,
+ #       col=olive[,2], pch=olive[,1])
+ # ]
+
+ olivAOP.sq <- EPPlabAgg(olivePPs, "inv")
+ oliveProj <- olivePP.kurt.max$x \%*\% olivAOP.sq$O
+ plot(density(oliveProj))
+ rug(oliveProj[olive$region==1],col=1)
+ rug(oliveProj[olive$region==2],col=2)
+ rug(oliveProj[olive$region==3],col=3)
 }
 \author{
 Anne Ruiz-Gazen, Daniel Fischer, Klaus Nordhausen
