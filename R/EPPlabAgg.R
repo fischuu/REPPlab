@@ -38,10 +38,9 @@
 #'  EPPlabAgg(olivePP.kurt.max)$k
 #'  EPPlabAgg(olivePPs, "cum", 0.99)$k
 #'  
-#'  # IF there is here on k=2 or more, maybe one could add
-#'  # pairs(olivePP.kurt.max %*% EPPlabAgg(olivePPs, "cum", 0.99)$O,
-#'  #       col=olive[,2], pch=olive[,1])
-#'  # ]
+#'  pairs(olivePP.kurt.max$x %*% EPPlabAgg(olivePPs, "cum", 0.99)$O,
+#'        col=olive[,2], pch=olive[,1])
+#'  
 #'  
 #'  olivAOP.sq <- EPPlabAgg(olivePPs, "inv")
 #'  oliveProj <- olivePP.kurt.max$x %*% olivAOP.sq$O
@@ -67,7 +66,7 @@ EPPlabAgg <- function(x, method="cumulative", percentage=0.95){
                   # Now go through all directions 
                     for(dirRun in 1:dim(x[[i]]$PPdir)[2]){
                   # Now sum them up
-                      avgMatrix <- avgMatrix + x[[i]]$PPdir[,dirRun] %*% t(x[[i]]$PPdir[,dirRun]   )
+                      avgMatrix <- avgMatrix + tcrossprod(x[[i]]$PPdir[, dirRun])
                     }
                   }
                 # Divide by the summands to get the average
@@ -78,7 +77,7 @@ EPPlabAgg <- function(x, method="cumulative", percentage=0.95){
                   umave<-eigmave$vectors
                 # eliminate the directions that are associated with less than '1-percentage'% of the information
                   takeThese <- 1:min(sum(((cumsum(lmave)/sum(lmave))<percentage))+1, length(lmave))
-                  keepmave<-umave[,takeThese] 
+                  keepmave<-umave[,takeThese,drop=FALSE] 
                 # project the data on the directions we keep
                   coord <- x[[i]]$x %*% keepmave           
                 # Write out the results

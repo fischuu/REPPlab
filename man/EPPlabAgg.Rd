@@ -44,10 +44,9 @@ library(tourr)
  EPPlabAgg(olivePP.kurt.max)$k
  EPPlabAgg(olivePPs, "cum", 0.99)$k
 
- # IF there is here on k=2 or more, maybe one could add
- # pairs(olivePP.kurt.max \%*\% EPPlabAgg(olivePPs, "cum", 0.99)$O,
- #       col=olive[,2], pch=olive[,1])
- # ]
+ pairs(olivePP.kurt.max$x \%*\% EPPlabAgg(olivePPs, "cum", 0.99)$O,
+       col=olive[,2], pch=olive[,1])
+
 
  olivAOP.sq <- EPPlabAgg(olivePPs, "inv")
  oliveProj <- olivePP.kurt.max$x \%*\% olivAOP.sq$O
