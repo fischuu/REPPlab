@@ -2,33 +2,44 @@
 % Please edit documentation in R/EPPlabAgg.R
 \name{EPPlabAgg}
 \alias{EPPlabAgg}
-\title{Function to Combine epplab Objects}
+\title{Function to Aggregate Directions From epplab Objects}
 \usage{
 EPPlabAgg(x, method = "cumulative", percentage = 0.95)
 }
 \arguments{
-\item{x}{An object of class \code{epplab}.}
+\item{x}{An object of class \code{epplab} or a list of \code{epplab} objects.}
 
-\item{method}{The type of method, see details}
+\item{method}{The type of method, see details. Options are \code{inverse}, \code{sq.inverse} and \code{cumulative}.}
 
-\item{percentage}{Threshold of explained variance}
+\item{percentage}{Threshold for the relative eigenvalue sum to retain, see details.}
 }
 \value{
-A list with class 'epplabagg' containing the following
-components:
-\item{P}{something}
-\item{O}{something}
-\item{k}{something}
-\item{eigenvalues}{something}
+A list with class 'epplabagg' containing the following components:
+\item{P}{The estimated average orthogonal projection matrix.}
+\item{O}{An orthogonal matrix on which P is based upon.}
+\item{k}{The rank of the average orthogonal projection matrix.}
+\item{eigenvalues}{The relevant eigenvalues, see details. Only given if \code{method="cumulative"}.}
 }
 \description{
-Function that automatically determines directions of interest. Several epplab objects
-can be combined
+Function that automatically aggregates the projection directions from one or more \code{epplab} objects.
+Three options are available on how to choose the final projection which can have a rank larger than one.
+The parameter \code{x} can either be a single object or a list of epplab objects.
+Options for method are \code{inverse}, \code{sq.inverse} and \code{cumulative}.
 }
 \details{
-The parameter \code{x} can either be a single object or a list of epplab objects
-
-Options for method are inverse, sqinverse and cum.
+Denote \eqn{p_i} as one of the \eqn{m} projections
+contained in the list of \code{epplab} objects
+and \eqn{P_i} as the corresponding orthogonal projection matrices (each
+having rank one). The method \code{cumulative}
+ is based on the eigenvalue decomposition of \eqn{\bar P_w=\frac 1m
+ \sum_{i=1}^m P_i}{P.bar_w=1/m sum(P_i)}
+ and keeps as \code{O} the eigenvectors such that the corresponding
+ relative eigenvalue sum is at least \code{percentage}.
+ The number of eigenvectors retained corresponds to the rank \code{k} and
+ \code{P} is the corresponding orthogonal projection matrix.
+ The methods \code{inverse} and \code{sq.inverse} are automatic rules to
+ choose the number of eigenvectors to retain as implemented by the function
+ \code{\link[LDRTools]{AOP}}.
 }
 \examples{
 library(tourr)
@@ -59,10 +70,10 @@ library(tourr)
 Anne Ruiz-Gazen, Daniel Fischer, Klaus Nordhausen
 }
 \references{
-\cite{Cite What?}
+\cite{Liski, E., Nordhausen, K., Oja, H. and Ruiz-Gazen, A. (201?), Combining Linear Dimension Reduction Estimates, to appear in the Proceedings of \emph{ICORS 2015}, pp. ??-??.}
 }
 \seealso{
-\code{\link{EPPlab}}
+\code{\link{EPPlab}}, \code{\link[LDRTools]{AOP}}
 }
 \keyword{multivariate}
 

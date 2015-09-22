@@ -1,28 +1,39 @@
 # Helpfunction
   B2P_fixed <- function(x){tcrossprod(x)/sum(x^2)  }
 
-#' Function to Combine epplab Objects
-#' 
-#' Function that automatically determines directions of interest. Several epplab objects 
-#' can be combined
-#' 
-#' The parameter \code{x} can either be a single object or a list of epplab objects
-#' 
-#' Options for method are inverse, sqinverse and cum.
+  
+#' Function to Aggregate Directions From epplab Objects
 #'
-#' @param x An object of class \code{epplab}. 
-#' @param method The type of method, see details
-#' @param percentage Threshold of explained variance
-#' @return A list with class 'epplabagg' containing the following
-#' components: 
-#' \item{P}{something}
-#' \item{O}{something}
-#' \item{k}{something}
-#' \item{eigenvalues}{something}
+#' Function that automatically aggregates the projection directions from one or more \code{epplab} objects.
+#' Three options are available on how to choose the final projection which can have a rank larger than one.
+#' The parameter \code{x} can either be a single object or a list of epplab objects.
+#' Options for method are \code{inverse}, \code{sq.inverse} and \code{cumulative}.
+#'
+#' @param x An object of class \code{epplab} or a list of \code{epplab} objects.
+#' @param method The type of method, see details. Options are \code{inverse}, \code{sq.inverse} and \code{cumulative}.
+#' @param percentage Threshold for the relative eigenvalue sum to retain, see details.
+#' @return A list with class 'epplabagg' containing the following components:
+#' \item{P}{The estimated average orthogonal projection matrix.}
+#' \item{O}{An orthogonal matrix on which P is based upon.}
+#' \item{k}{The rank of the average orthogonal projection matrix.}
+#' \item{eigenvalues}{The relevant eigenvalues, see details. Only given if \code{method="cumulative"}.}
+#' @details Denote \eqn{p_i} as one of the \eqn{m} projections
+#' contained in the list of \code{epplab} objects
+#' and \eqn{P_i} as the corresponding orthogonal projection matrices (each
+#' having rank one). The method \code{cumulative}
+#'  is based on the eigenvalue decomposition of \eqn{\bar P_w=\frac 1m
+#'  \sum_{i=1}^m P_i}{P.bar_w=1/m sum(P_i)}
+#'  and keeps as \code{O} the eigenvectors such that the corresponding
+#'  relative eigenvalue sum is at least \code{percentage}.
+#'  The number of eigenvectors retained corresponds to the rank \code{k} and
+#'  \code{P} is the corresponding orthogonal projection matrix.
+#'  The methods \code{inverse} and \code{sq.inverse} are automatic rules to
+#'  choose the number of eigenvectors to retain as implemented by the function
+#'  \code{\link[LDRTools]{AOP}}.
 #' @author Anne Ruiz-Gazen, Daniel Fischer, Klaus Nordhausen
-#' @seealso \code{\link{EPPlab}}
-#' @references \cite{Cite What?}
-#' @keywords multivariate
+#' @seealso \code{\link{EPPlab}}, \code{\link[LDRTools]{AOP}}
+#' @references \cite{Liski, E., Nordhausen, K., Oja, H. and Ruiz-Gazen, A. (201?), Combining Linear Dimension Reduction Estimates, to appear in the Proceedings of \emph{ICORS 2015}, pp. ??-??.}
+#' @keywords multivariate  
 #' @examples
 #' 
 #'  library(tourr)
@@ -95,5 +106,6 @@ EPPlabAgg <- function(x, method="cumulative", percentage=0.95){
                   res <- AOP(lresB2P.all, weights = method)  
                 })
       # Return the results
+        class(res) <- "epplabagg"
         res
 }
