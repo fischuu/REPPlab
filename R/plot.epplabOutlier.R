@@ -37,6 +37,12 @@
 #' plot(OUT)
 #' 
 #' @export
+#' @importFrom graphics axis
+#' @importFrom graphics barplot
+#' @importFrom graphics box
+#' @importFrom graphics image
+#' @importFrom graphics pairs
+#' @importFrom graphics plot
 plot.epplabOutlier <- function(x,col=c("white","black"),outlier=TRUE, xlab="", ylab="", ...) 
 {
   # If only outlier are requested, then the outlier matrix is limitied to those, where
