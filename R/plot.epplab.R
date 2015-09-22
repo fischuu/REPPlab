@@ -46,6 +46,7 @@
 #' plot(res,type="angles")
 #' 
 #' @export
+#' @importFrom utils stack
 `plot.epplab` <- function(x, type="kernel", angles="radiants", kernel="biweight", which=1:10, as.table=TRUE, ...){
   
   which <- which[which<=length(x$PPindexVal)]
