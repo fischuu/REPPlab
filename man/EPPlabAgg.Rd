@@ -24,15 +24,15 @@ A list with class 'epplabagg' containing the following components:
 Function that automatically aggregates the projection directions from one or more \code{epplab} objects.
 Three options are available on how to choose the final projection which can have a rank larger than one.
 The parameter \code{x} can either be a single object or a list of epplab objects.
-Options for method are \code{inverse}, \code{sq.inverse} and \code{cumulative}.
+Options for \code{method} are \code{inverse}, \code{sq.inverse} and \code{cumulative}.
 }
 \details{
 Denote \eqn{p_i} as one of the \eqn{m} projections
 contained in the list of \code{epplab} objects
 and \eqn{P_i} as the corresponding orthogonal projection matrices (each
 having rank one). The method \code{cumulative}
- is based on the eigenvalue decomposition of \eqn{\bar P_w=\frac 1m
- \sum_{i=1}^m P_i}{P.bar_w=1/m sum(P_i)}
+ is based on the eigenvalue decomposition of \eqn{P_w=\frac 1m
+ \sum_{i=1}^m P_i}{P_w=1/m sum(P_i)}
  and keeps as \code{O} the eigenvectors such that the corresponding
  relative eigenvalue sum is at least \code{percentage}.
  The number of eigenvectors retained corresponds to the rank \code{k} and
