@@ -1,4 +1,4 @@
-# Helpfunction
+# Helpfunction (probably not required anymore, you can delete it in the next version)
   B2P_fixed <- function(x){tcrossprod(x)/sum(x^2)  }
 
   
@@ -101,7 +101,7 @@ EPPlabAgg <- function(x, method="cumulative", percentage=0.95){
                   lresB2P <- list()
                   lresB2P.all <- c()
                   for(i in 1:length(x)){
-                    B2P.output[[i]] <- apply(coef(x[[i]]),2 , B2P_fixed)
+                    B2P.output[[i]] <- apply(coef(x[[i]]),2 , B2P)
                     lresB2P[[i]] <- tapply(B2P.output[[i]], gl(ncol(B2P.output[[i]]), nrow(B2P.output[[i]])), matrix, nrow=dim(x[[1]]$x)[2], ncol=dim(x[[1]]$x)[2])
                     lresB2P.all <- c(lresB2P.all, lresB2P[[i]])
                   }
