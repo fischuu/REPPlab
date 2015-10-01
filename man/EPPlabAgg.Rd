@@ -27,14 +27,12 @@ The parameter \code{x} can either be a single object or a list of epplab objects
 Options for \code{method} are \code{inverse}, \code{sq.inverse} and \code{cumulative}.
 }
 \details{
-Denote \eqn{p_i} as one of the \eqn{m} projections
-contained in the list of \code{epplab} objects
-and \eqn{P_i} as the corresponding orthogonal projection matrices (each
-having rank one). The method \code{cumulative}
- is based on the eigenvalue decomposition of \eqn{P_w=\frac 1m
- \sum_{i=1}^m P_i}{P_w=1/m sum(P_i)}
- and keeps as \code{O} the eigenvectors such that the corresponding
- relative eigenvalue sum is at least \code{percentage}.
+Denote \eqn{p_i, i=1,...,m}, the projection vectors contained in the list of \code{epplab} objects
+and \eqn{P_i, i=1,..,m}, the corresponding orthogonal projection matrices (each having rank one).
+The method \code{cumulative} is based on the eigenvalue decomposition of
+  \eqn{P_w=\frac 1m \sum_{i=1}^m P_i}{P_w=1/m sum(P_i)}
+ and transforms as \code{O} the eigenvectors such that the corresponding
+ relative eigenvalues sum is at least \code{percentage}.
  The number of eigenvectors retained corresponds to the rank \code{k} and
  \code{P} is the corresponding orthogonal projection matrix.
  The methods \code{inverse} and \code{sq.inverse} are automatic rules to
@@ -44,6 +42,8 @@ having rank one). The method \code{cumulative}
 \examples{
 library(tourr)
  data(olive)
+ # To keep the runtime short, maxiter and n.simu were chosen very small for demonstration purposes, real life
+ # applications would rather choose larger values, e.g. n.simu=100, maxiter=200
  olivePP.kurt.max <-
    EPPlab(olive[,3:10],PPalg="PSO",PPindex="KurtosisMax",n.simu=10, maxiter=20)
 
@@ -67,7 +67,7 @@ library(tourr)
  rug(oliveProj[olive$region==3],col=3)
 }
 \author{
-Anne Ruiz-Gazen, Daniel Fischer, Klaus Nordhausen
+Daniel Fischer, Klaus Nordhausen, Anne Ruiz-Gazen
 }
 \references{
 \cite{Liski, E., Nordhausen, K., Oja, H. and Ruiz-Gazen, A. (201?), Combining Linear Dimension Reduction Estimates, to appear in the Proceedings of \emph{ICORS 2015}, pp. ??-??.}
