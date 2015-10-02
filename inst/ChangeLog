@@ -1,5 +1,9 @@
 LOG of the CHANGES in the package REPPlab
 
+Version 0.9.3
+-----------------------------------
+*
+
 Version 0.9.2
 -----------------------------------
 * Introduced Roxygen2 for the package documentation

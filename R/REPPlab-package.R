@@ -28,7 +28,7 @@ NULL
 #' high dimensional) data sets.
 #' 
 #' \tabular{ll}{ Package: \tab REPPlab\cr Type: \tab Package\cr Version: \tab
-#' 0.9.2\cr Date: \tab 2015-09-01\cr License: \tab GPL\cr LazyLoad: \tab yes\cr
+#' 0.9.3\cr Date: \tab 2015-10-02\cr License: \tab GPL\cr LazyLoad: \tab yes\cr
 #' }
 #' 
 #' @name REPPlab-package
