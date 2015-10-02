@@ -36,7 +36,7 @@ NULL
 #' @docType package
 #' @author Daniel Fischer, Alain Berro, Klaus Nordhausen, Anne Ruiz-Gazen
 #' 
-#' Maintainer: Daniel Fischer <daniel.fischer@@luke.fi>
+#' Maintainer: Daniel Fischer <daniel.fischer@luke.fi>
 #'
 #' @import rJava lattice stats LDRTools graphics
 #* @importFrom utils stack
