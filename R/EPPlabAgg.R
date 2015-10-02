@@ -36,8 +36,9 @@
 #' 
 #'  library(tourr)
 #'  data(olive)
-#'  # To keep the runtime short, maxiter and n.simu were chosen very small for demonstration purposes, real life
-#'  # applications would rather choose larger values, e.g. n.simu=100, maxiter=200
+#'  # To keep the runtime short, maxiter and n.simu were chosen very 
+#'  # small for demonstration purposes, real life applications would
+#'  # rather choose larger values, e.g. n.simu=100, maxiter=200
 #'  olivePP.kurt.max <-
 #'    EPPlab(olive[,3:10],PPalg="PSO",PPindex="KurtosisMax",n.simu=10, maxiter=20)
 #'  
