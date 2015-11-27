@@ -4,7 +4,7 @@
 \alias{EPPlabAgg}
 \title{Function to Aggregate Directions From epplab Objects}
 \usage{
-EPPlabAgg(x, method = "cumulative", percentage = 0.8)
+EPPlabAgg(x, method = "cumulative", percentage = 0.85)
 }
 \arguments{
 \item{x}{An object of class \code{epplab} or a list of \code{epplab} objects.}
