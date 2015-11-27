@@ -5,10 +5,21 @@ Version: 0.9.3
 Date: 2015-10-02
 Author: Daniel Fischer, Alain Berro, Klaus Nordhausen, Anne Ruiz-Gazen
 Maintainer: Daniel Fischer <daniel.fischer@luke.fi>
-Depends: R (>= 2.15.1), rJava, lattice, LDRTools (>= 0.2), utils, graphics
-Suggests: tourr, amap
-Description: An R Interface to EPP-lab v1.0. EPP-lab is a Java program for projection pursuit using genetic algorithms written by Alain Berro and S. Larabi Marie-Sainte and is included in the package.
+Depends:
+    R (>= 2.15.1),
+    rJava,
+    lattice,
+    LDRTools (>= 0.2),
+    utils,
+    graphics
+Suggests:
+    tourr,
+    amap
+Description: An R Interface to EPP-lab v1.0. EPP-lab is a Java program for
+    projection pursuit using genetic algorithms written by Alain Berro and S. Larabi
+    Marie-Sainte and is included in the package.
 License: GPL (>= 2)
 Encoding: latin1
 NeedsCompilation: no
 Repository: CRAN
+RoxygenNote: 5.0.1

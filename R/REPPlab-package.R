@@ -1,8 +1,8 @@
-#' Reliability Data from a Manufacturer of Electronic Components
+#' Reliability Data from an Industrial Context
 #' 
-#' The data set contains 55 variables measured during the production process of
-#' 520 components. The problem for this data is to identify the produced items
-#' with a fault.
+#' The data set contains 55 variables measured during the production
+#' process of 520 units. The problem for this data is to identify the
+#' produced items with a fault not detected by standard tests.
 #' 
 #' 
 #' @name ReliabilityData
