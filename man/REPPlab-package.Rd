@@ -4,14 +4,17 @@
 \name{REPPlab-package}
 \alias{R/EPP-lab-package}
 \alias{REPPlab-package}
-\title{R Interface to the Java Program EPP-lab v1.0}
+\title{R Interface to the Java Program 'EPP-lab' v1.0}
 \description{
-An interface that gives access to the Java program EPP-lab which implements
+An interface that gives access to the Java program 'EPP-lab' which implements
 several biologically inspired optimisation algorithms and several indices
 for Exploratory Projection Pursuit (PP). The objective of optimizing PP
 indices and projecting the data on the associated one-dimensional directions
 is to detect hidden structures such as clusters or outliers in (possibly
 high dimensional) data sets.
+The 'EPP-lab' sources and jar-files are available under 
+\url{https://github.com/fischuu/EPP-lab.git}. For a detailed description of
+ 'EPP-lab', see Larabi (2011).
 }
 \details{
 \tabular{ll}{ Package: \tab REPPlab\cr Type: \tab Package\cr Version: \tab
