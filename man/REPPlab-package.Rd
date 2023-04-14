@@ -18,7 +18,7 @@ The 'EPP-lab' sources and jar-files are available under
 }
 \details{
 \tabular{ll}{ Package: \tab REPPlab\cr Type: \tab Package\cr Version: \tab
-0.9.4\cr Date: \tab 2016-08-23\cr License: \tab GPL\cr LazyLoad: \tab yes\cr
+0.9.5\cr Date: \tab 2023-04-14\cr License: \tab GPL\cr LazyLoad: \tab yes\cr
 }
 }
 \author{
