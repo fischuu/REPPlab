@@ -2,8 +2,8 @@ Package: REPPlab
 Type: Package
 Title: R Interface to 'EPP-Lab', a Java Program for Exploratory Projection
     Pursuit
-Version: 0.9.4
-Date: 2016-08-23
+Version: 0.9.5
+Date: 2023-04-14
 Author: Daniel Fischer, Alain Berro, Klaus Nordhausen, Anne Ruiz-Gazen
 Maintainer: Daniel Fischer <daniel.fischer@luke.fi>
 Depends:
